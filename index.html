@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Untuk Sal ❤️</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Segoe UI", sans-serif;
+    }
+
+    body {
+        min-height: 100vh;
+        overflow-x: hidden;
+        background: linear-gradient(135deg, #ffd6e7, #fff0f6);
+        color: #333;
+    }
+
+    .container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 450px;
+        background: rgba(255,255,255,0.9);
+        padding: 35px 25px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+        position: relative;
+        z-index: 2;
+    }
+
+    .heart {
+        font-size: 65px;
+        animation: heartbeat 1.2s infinite;
+    }
+
+    h1 {
+        margin: 15px 0 10px;
+        color: #e83e72;
+        font-size: 32px;
+    }
+
+    h2 {
+        color: #555;
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    p {
+        line-height: 1.7;
+        color: #666;
+    }
+
+    button {
+        border: none;
+        padding: 13px 22px;
+        margin: 10px 5px;
+        border-radius: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .primary {
+        background: #e83e72;
+        color: white;
+    }
+
+    .primary:hover {
+        transform: scale(1.05);
+        background: #d62d62;
+    }
+
+    .secondary {
+        background: #ffe1eb;
+        color: #d62d62;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .message {
+        margin-top: 25px;
+        padding: 20px;
+        background: #fff0f5;
+        border-radius: 18px;
+        animation: muncul 0.7s ease;
+    }
+
+    .message h2 {
+        color: #e83e72;
+    }
+
+    .photo {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 6px solid white;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        margin: 15px auto;
+    }
+
+    .question {
+        margin-top: 20px;
+    }
+
+    .no-button {
+        position: relative;
+    }
+
+    /* HATI JATUH */
+
+    .falling-heart {
+        position: fixed;
+        top: -30px;
+        font-size: 20px;
+        animation: jatuh linear forwards;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    @keyframes jatuh {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    @keyframes heartbeat {
+        0%, 100% {
+            transform: scale(1);
+        }
+
+        50% {
+            transform: scale(1.2);
+        }
+    }
+
+    @keyframes muncul {
+        from {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .typing {
+        min-height: 55px;
+    }
+
+    .footer {
+        margin-top: 25px;
+        font-size: 13px;
+        color: #999;
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="card">
+
+        <div class="heart">
+            ❤️
+        </div>
+
+        <h1>Sal, Salviennie !</h1>
+
+        <h2>gw bikin ini seharian 😏</h2>
+
+        <p class="typing" id="typing"></p>
+
+        <button class="primary" onclick="bukaSurprise()">
+            🎁 buka sal
+        </button>
+
+        <button class="secondary" onclick="jahil()">
+            😏 yang ini janan di klik
+        </button>
+
+
+        <!-- SURPRISE -->
+
+        <div id="surprise" class="hidden message">
+
+            <h2>🎉 Surprise!!!</h2>
+
+            <!--
+            GANTI FOTO DI BAWAH INI
+            dengan foto pacar kamu.
+            -->
+
+            <img
+                src="foto-happy.jpg"
+                class="photo"
+                alt="Happy">
+
+            <p>
+                Happy...
+                <br><br>
+
+                emng bener udh punya pacar ?
+                gw agak kepikirann :(
+                knpa ga read2 , tau sih emng gapentig
+                hikssss
+                
+                 
+                <br><br>
+
+                gw jadi agghajaiuwi
+                spiderman kali
+                😌
+                <br><br>
+
+                gw cuma mau bilang...
+                <br>
+
+                <strong>
+                    Makasih sudah hadir dan menjadi
+                    salah satu bagian paling menyenangkan
+                    dalam hidupku. ❤️
+                </strong>
+            </p>
+
+            <br>
+
+            <h2>
+                Love u seluas universe ❤️
+            </h2>
+
+        </div>
+
+
+        <!-- PERTANYAAN -->
+
+        <div class="question">
+
+            <p>
+                sebelumnyaa
+            </p>
+
+            <h2>
+                Kamu sayang aku nggak? 🥺
+            </h2>
+
+            <button class="primary" onclick="jawabIya()">
+                ❤️ Iya
+            </button>
+
+            <button
+                class="secondary no-button"
+                id="noButton"
+                onmouseover="kabur()"
+                onclick="kabur()">
+
+                😒 Nggak
+
+            </button>
+
+        </div>
+
+
+        <div id="jawaban" class="hidden message">
+
+            <h2>Iyah aja udah sal , biar gw seneng❤️</h2>
+
+            <p>
+                eaa
+                <strong>IYA</strong>.
+                <br><br>
+
+                harus Iyah
+                iyah pokoknya 
+                <br><br>
+
+                Love you, Happy! ❤️
+            </p>
+
+        </div>
+
+
+        <div class="footer">
+            Dibuat khusus untuk Sal ❤️
+        </div>
+
+    </div>
+
+</div>
+
+
+<script>
+
+    /* =========================
+       EFEK TULISAN
+    ========================= */
+
+    const text =
+        "penasaran, klik tombol di bawah... <3";
+
+    let i = 0;
+
+    function typingEffect() {
+
+        if (i < text.length) {
+
+            document.getElementById("typing").innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typingEffect, 40);
+        }
+    }
+
+    typingEffect();
+
+
+    /* =========================
+       SURPRISE
+    ========================= */
+
+    function bukaSurprise() {
+
+        document.getElementById("surprise")
+            .classList.remove("hidden");
+
+        buatHati();
+
+        window.scrollTo({
+            top: document.body.scrollHeight,
+            behavior: "smooth"
+        });
+    }
+
+
+    /* =========================
+       TOMBOL JAHIL
+    ========================= */
+
+    function jahil() {
+
+        alert(
+            "😏 Katanya jangan klik...\n\n" +
+            "malah diklik.\n\n" +
+            "Iron Man said : ILove u 3000 ❤️"
+        );
+
+    }
+
+
+    /* =========================
+       TOMBOL TIDAK
+    ========================= */
+
+    function kabur() {
+
+        const button =
+            document.getElementById("noButton");
+
+        const maxX = window.innerWidth - 130;
+        const maxY = window.innerHeight - 70;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        button.style.position = "fixed";
+        button.style.left = x + "px";
+        button.style.top = y + "px";
+
+    }
+
+
+    /* =========================
+       JAWAB IYA
+    ========================= */
+
+    function jawabIya() {
+
+        document.getElementById("jawaban")
+            .classList.remove("hidden");
+
+        buatHati();
+
+    }
+
+
+    /* =========================
+       HATI JATUH
+    ========================= */
+
+    function buatHati() {
+
+        for (let i = 0; i < 25; i++) {
+
+            const heart =
+                document.createElement("div");
+
+            heart.classList.add("falling-heart");
+
+            heart.innerHTML =
+                Math.random() > 0.5
+                ? "❤️"
+                : "💕";
+
+            heart.style.left =
+                Math.random() * 100 + "vw";
+
+            heart.style.animationDuration =
+                (2 + Math.random() * 4) + "s";
+
+            heart.style.fontSize =
+                (15 + Math.random() * 25) + "px";
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 6000);
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
